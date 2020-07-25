@@ -22,7 +22,6 @@ def print_response(response):
     print('\n')
     print(response.json())
 
-
 def test_methods():
 
     response = requests.post(BASE + endpoint + item_name, params={'http':'','https':'','price':12})
@@ -43,17 +42,14 @@ def test_methods():
     response = requests.put(BASE + endpoint + second_item_name, params={'http':'', 'https':'','price':50})
     assert response.json() == method_responses['post_second']
 
-
 def test_get_all_items():
 
     response = requests.get(BASE + '/items')
     assert response.json() == {'items': [method_responses['post_second']]}
 
-
 def main():
     test_methods()
     test_get_all_items()
-
 
 if __name__ == "__main__":
     main()
