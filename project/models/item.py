@@ -1,4 +1,5 @@
 from db import db
+# from app import db
 
 class ItemModel(db.Model):
 
@@ -8,12 +9,14 @@ class ItemModel(db.Model):
     name = db.Column(db.String(80))
     price = db.Column(db.Float(precision=2))
 
-    owner_id = db.Column(db.Integer, db.ForeignKey('owners.id'))
+    # to delete owner I need to delete items where the owner is assigned to
+    owner_id = db.Column(db.Integer, db.ForeignKey('owners.id')) # this is a consecutive id integer from primary_key owners table
     owner = db.relationship('OwnerModel')
 
-    def __init__(self, name, price):
+    def __init__(self, name, price, owner_id):
         self.name = name
         self.price = price
+        self.owner_id = owner_id
 
     def json(self):
         return {'name': self.name, 'price': self.price}
