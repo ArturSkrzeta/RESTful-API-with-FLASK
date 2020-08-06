@@ -15,6 +15,15 @@
   
 <h3>Ad-hoc SQL Analysis</h3>
 <ul>
+  <li>Payers db table.</li>
+</ul>
+
+<ul>
+  <li>Transaction db table.</li>
+</ul>
+  
+<h3>Ad-hoc SQL Analysis</h3>
+<ul>
   <li>Client classification as per transaction amount.</li>
 </ul>
 <image src="images/client_clasification.JPG">
