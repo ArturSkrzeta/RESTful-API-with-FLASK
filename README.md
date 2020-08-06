@@ -13,17 +13,19 @@
 </ul>
 <image src="images/test.JPG">
   
-<h3>Ad-hoc SQL Analysis</h3>
+<h3>Database</h3>
 
 <ul>
   <li>Payers db table.</li>
   <li>Every single table row represents a single Python object of the PayerModel class.</li>
+  <li>Table attributes (headings) represent Python object properties.</li>
 </ul>
 <image src="images/payers_table.JPG">
   
 <ul>
   <li>Transaction db table.</li>
   <li>Every single table row represents a single Python object of the TransactionModel class.</li>
+  <li>Table attributes (headings) represent Python object properties.</li>
 </ul>
 <image src="images/transaction_table.JPG">
   
