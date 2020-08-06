@@ -44,3 +44,10 @@
   <li>Currency count.</li>
 </ul>
 <image src="images/currency_count.JPG">
+                                      
+                                      
+<h3>Cmd</h3>
+<ul>
+  <li>By importing db I can opearte on a database treating records as the objects:</li>
+</ul>
+<image src="images/cmd.JPG">
