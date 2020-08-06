@@ -17,10 +17,13 @@
 <ul>
   <li>Payers db table.</li>
 </ul>
-
+<image src="images/payers_table.JPG">
 <ul>
   <li>Transaction db table.</li>
 </ul>
+<image src="images/transaction_table.JPG">
+  
+  
   
 <h3>Ad-hoc SQL Analysis</h3>
 <ul>
