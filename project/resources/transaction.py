@@ -42,7 +42,6 @@ class Transaction(Resource):
             return {'message': "An transaction with transaction_id '{}' already exists.".format(transaction_id)}, 400
 
         data = Transaction.parser.parse_args()
-
         transaction = TransactionModel(transaction_id, **data)
 
         try:
@@ -73,8 +72,3 @@ class Transaction(Resource):
         transaction.save_to_db()
 
         return transaction.json()
-
-
-class TransactionsList(Resource):
-    def get(self):
-        return {'transactions': list(map(lambda x: x.json(), TransactionModel.query.all()))}

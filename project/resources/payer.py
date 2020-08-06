@@ -1,7 +1,15 @@
-from flask_restful import Resource
+from flask_restful import Resource, reqparse
 from models.payer import PayerModel
 
 class Payer(Resource):
+
+    parser = reqparse.RequestParser()
+
+    parser.add_argument('country',
+                        type=str,
+                        required=True,
+                        help="This field cannot be left blank!"
+                        )
 
     def get(self, name):
         payer = PayerModel.find_by_name(name)
@@ -13,7 +21,8 @@ class Payer(Resource):
         if PayerModel.find_by_name(name):
             return {'message': "A payer with name '{}' already exists.".format(name)}, 400
 
-        payer = PayerModel(name)
+        data = Payer.parser.parse_args()
+        payer = PayerModel(name, data['country'])
 
         try:
             payer.save_to_db()
@@ -28,8 +37,3 @@ class Payer(Resource):
             payer.delete_from_db()
 
         return {'message': 'Payer deleted'}
-
-
-class PayersList(Resource):
-    def get(self):
-        return {'payers': list(map(lambda x: x.json(), PayerModel.query.all()))}
