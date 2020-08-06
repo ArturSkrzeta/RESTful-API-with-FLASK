@@ -23,9 +23,7 @@ def generate_transaction(transaction_count):
     for _i in range(transaction_count):
         yield get_transaction_details()
 
-
 def main():
-
     for transaction in generate_transaction(trac_count):
         response1 = requests.post(BASE + resource_payer + transaction[1], params={'http':'','https':''})
         response2 = requests.post(BASE + resource_transaction + transaction[0], params={'http': '', 'https': '', 'amount': transaction[2], 'currency': transaction[3], 'time': transaction[4], 'payer_id': randrange(1,trac_count+1)})
