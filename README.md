@@ -19,7 +19,7 @@
 <ul>
   <li>Payers db table.</li>
   <li>Every single table row represents a single Python object of the PayerModel class.</li>
-  <li>Table attributes (headings) represent Python object properties.</li>
+  <li>Table attributes (headings) represent properties of PayerModel object .</li>
 </ul>
 <image src="images/payers_table.JPG">
   
