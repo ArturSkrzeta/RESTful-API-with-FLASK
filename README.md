@@ -14,6 +14,15 @@
 <image src="images/test.JPG">
   
 <h3>Ad-hoc SQL Analysis</h3>
+<ul>
+  <li>Client classification as per transaction amount.</li>
+</ul>
 <image src="images/client_clasification.JPG">
+ <ul>
+  <li>Getting second biggest transaction.</li>
+</ul>
 <image src="images/second biggest amount.JPG"">
+<ul>
+  <li>Currency count.</li>
+</ul>
 <image src="images/currency_count.JPG">
