@@ -2,7 +2,7 @@
 <h3>Intro</h3>
 <ul>
   <li>A RESTful API is the Application Program Interface that uses HTTP requests (GET, PUT, POST or DELETE) to help a client (web or mobile app) to interact with server's database - inserting or retrieving data.</li>
-  <li>With RESTful API in Flask, I can define the way of interacting between client and server using HTTP requests what describes below schema:</li>
+  <li>With RESTful API in Flask, I can define the way of interaction between client and server - all via HTTP requests.</li>
 </ul>
 <image src="images/api_schema.JPG">
 
