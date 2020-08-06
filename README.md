@@ -11,6 +11,9 @@
   <li>Project has been written along with automated testing.</li>
   <li>With testing we can check the Client-API-Server performance.</li>
 </ul>
-<h3>Test executed successfully</h3>
 <image src="images/test.JPG">
-
+  
+<h3>Ad-hoc SQL Analysis</h3>
+<image src="images/client_clasification.JPG">
+<image src="images/second biggest amount.JPG">
+<image src="images/currency_count.JPG">
