@@ -1,8 +1,8 @@
 from flask import Flask
 from flask_restful import Api
 
-from resources.item import Item, ItemsList
-from resources.owner import Owner, OwnersList
+from resources.transaction import Transaction
+from resources.payer import Payer
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
@@ -14,10 +14,8 @@ api = Api(app)
 def create_tables():
     db.create_all()
 
-api.add_resource(Owner, '/owner/<string:name>')
-api.add_resource(OwnersList, '/owners')
-api.add_resource(Item, '/item/<string:name>')
-api.add_resource(ItemsList, '/items')
+api.add_resource(Payer, '/payer/<string:name>')
+api.add_resource(Transaction, '/transaction/<string:transaction_id>')
 
 if __name__ == '__main__':
     from db import db
