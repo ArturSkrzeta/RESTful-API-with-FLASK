@@ -14,6 +14,6 @@
 <image src="images/test.JPG">
   
 <h3>Ad-hoc SQL Analysis</h3>
-<image src="images/client_clasification.JPG" height="400" width="530">
-<image src="images/second biggest amount.JPG" height="220" width="450">
-<image src="images/currency_count.JPG" height="180" width="500">
+<image src="images/client_clasification.JPG">
+<image src="images/second biggest amount.JPG"">
+<image src="images/currency_count.JPG">
