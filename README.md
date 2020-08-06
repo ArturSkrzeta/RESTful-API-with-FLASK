@@ -19,14 +19,14 @@
 <ul>
   <li>Payers db table.</li>
   <li>Every single table row represents a single Python object of the PayerModel class.</li>
-  <li>Table attributes (headings) represent properties of PayerModel object .</li>
+  <li>Table attributes (headings) represent properties of PayerModel type object .</li>
 </ul>
 <image src="images/payers_table.JPG">
   
 <ul>
   <li>Transaction db table.</li>
   <li>Every single table row represents a single Python object of the TransactionModel class.</li>
-  <li>Table attributes (headings) represent Python object properties.</li>
+  <li>Table attributes (headings) represent properties of TransactionModel type object.</li>
 </ul>
 <image src="images/transaction_table.JPG">
   
