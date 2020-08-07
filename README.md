@@ -13,6 +13,7 @@
   <li>The representation of a relational database to API is <b>Python Data Model</b>.</li>
   <li>The representation of Python Data Model to client App is a defined within API <b>Resource</b> of a specific Model.</li>
   <li>Resource is an external representation of internal Model.</li>
+  <li>Client App can access Python object of given Model only thorugh API Resource defined in the way in which allows it.</li>
   <li>Client App can interact with Resource using HTTP requests.</li>
   <li>With that solution, API Resource deciedes what Model objects are accessible and in what way id est getting, posting, putting, deleting.</li>
 </ul>
