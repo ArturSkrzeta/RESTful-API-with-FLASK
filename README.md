@@ -8,8 +8,8 @@
 <image src="images/api_schema.JPG">
 
 <ul>
-  <li>The representation of realtional database to API is Python Data Model.</li>
-  <li>The representation of Python Data Model to client App ise a defined within API Resource of a specific Model.</li>
+  <li>The representation of a realtional database to API is Python Data Model.</li>
+  <li>The representation of Python Data Model to client App is a defined within API Resource of a specific Model.</li>
   <li>Resource is an external representation of internal Model.</li>
   <li>Client App can interact with Resource with HTTP requests.</li>
   <li>With that solution, API Resource deciedes what Model objects are accessible and in what way id est getting, posting, putting, deleting.</li>
