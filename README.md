@@ -15,7 +15,7 @@
   <li>For each specific Data Model we need to define separate API Resource: 
     <ul>
       <li>For TransactionModel there is need to define Transaction API Resource.</li>
-      <li>The same for payers: for PayerModel there is need to define Payer API Resource.</li>
+      <li>For PayerModel there is need to define Payer API Resource.</li>
     </ul>
   <li>Resource is an external representation of internal Model.</li>
   <li>Client App can access Python object of given Model only thorugh API Resource.</li>
