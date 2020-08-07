@@ -11,7 +11,7 @@
 
 <ul>
   <li>The representation of a relational database to API is <b>Python Data Model</b>.</li>
-  <li>The representation of Python Data Model to client App is a defined within API <b>Resource</b> of a specific Model.</li>
+  <li>The representation of Python Data Model to client App is a defined within <b>API Resource</b> of a specific Model.</li>
   <li>For each specific Data Model we need to define separate API Resource: 
     <ul>
       <li>For TransactionModel there is need to define Transaction API Resource.</li>
