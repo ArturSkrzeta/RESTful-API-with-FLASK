@@ -76,3 +76,54 @@
   <li>By importing db I can opearte on a database treating records as the objects:</li>
 </ul>
 <image src="images/cmd.JPG">
+  
+<p>
+>>> from app import db
+>>> from models.owner import OwnerModel
+>>> from models.item import ItemModel
+>>> db.create_all()
+>>> owner1 = OwnerModel('Artur')
+>>> owner1.id
+>>> db.session.add(owner1)
+>>> db.session.commit()
+>>> owner1.id
+1
+>>> owner1.name
+'Artur'
+>>> prod1 = ItemModel('laptop', 12.00, owner1.id)
+>>> prod1.owner_id
+1
+>>> prod1.price
+12.0
+>>> db.session.add(prod1)
+>>> db.session.commit()
+>>> owner1.items
+[<ItemModel 1>]
+
+>>> owner1 = OwnerModel.query.filter_by(id=1).first()
+>>> owner1.name
+'Artur'
+>>> product2 = ItemModel('phone',100.12,owner1.id)
+>>> db.session.add(product2)
+>>> db.session.commit()
+>>> owner1.items
+[<ItemModel 1>, <ItemModel 2>]
+>>> owner1.items[1].price
+100.12
+>>> exit()
+
+>>> own = OwnerModel('Artur')
+>>> db.session.add(own)
+>>> db.session.commit()
+>>> prod1 = ItemModel('laptop',21.21,own.id)
+>>> db.session.add(prod1)
+>>> db.session.commit()
+>>> prod1.name
+'laptop'
+>>> prod1.id
+1
+>>> prod1.owner
+<OwnerModel 1>
+>>> prod1.owner.name
+'Artur'
+</p>
