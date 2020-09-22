@@ -78,7 +78,7 @@
   <image src="images/cmd.JPG">
   <li>I can start building db from scratch:</li>
   <br>
-  <image src="sqlalchemy_db_from_scratch.JPG">
+  <image src="images/sqlalchemy_db_from_scratch.JPG">
 </ul>
 
   
