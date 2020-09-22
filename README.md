@@ -31,6 +31,14 @@
 </ul>
 <image src="images/test.JPG">
   
+  
+<h3>SQLAlchemy</h3>
+<ul>
+  <li>Provides Object Relational Mapping which represents database table schemas with classes.</li>
+  <li>ORM lets us to query the database through the model classes.</li>
+</ul>
+  
+  
 <h3>Database</h3>
 
 <ul>
