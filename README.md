@@ -80,7 +80,6 @@
   <br>
   <image src="images/sqlalchemy_db_from_scratch.JPG">
   <br>
+  <br>
   <image src="images/sqlalchemy_db_from_scratch2.JPG">
 </ul>
-
-  
