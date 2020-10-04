@@ -49,12 +49,12 @@
 										<h2>RESTful API and HTTP Automated Tests</h2>
 										<h3>Intro</h3>
 										<ul>
-										  <li>A RESTful API uses HTTP requests to help a client (web or mobile app) to interact with server's database.</li>
+										  <li>A RESTful API uses HTTP requests to help a client (web, mobile app or client.py) to interact with server's database.</li>
 										  <li>HTTP requests (GET, PUT, POST or DELETE) allow for inserting, deleting, updating or retrieving data from db.</li>
 										  <li>With RESTful API in Flask, I can define the way of interaction between client and server - all via HTTP requests.</li>
 										  <li>Here is an example of a client sending POST request with data to server through API:</li>
 										</ul>
-										<image src="images/api_schema.JPG">
+										<image src="images/api_schema.JPG" width="780">
 									</header>
 								</div>
 							</section>
@@ -80,10 +80,9 @@
 									  <li>The representation of a relational database to API is <b>Python Data Model</b>.</li>
 									  <li>The representation of Python Data Model to client App is a defined within <b>API Resource</b> of a specific Model.</li>
 									  <li>For each specific Data Model we need to define separate API Resource:
-									    <ul>
-									      <li>For TransactionModel there is need to define Transaction API Resource.</li>
-									      <li>For PayerModel there is need to define Payer API Resource.</li>
-									    </ul>
+									    <br>
+									      - For TransactionModel there is need to define Transaction API Resource.<br>
+									      - For PayerModel there is need to define Payer API Resource.<br>
 										</li>
 									  <li>Resource is an external representation of internal Model.</li>
 									  <li>Client App can access Python object of given Model only thorugh API Resource.</li>
