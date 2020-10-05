@@ -50,8 +50,8 @@
 										<h3>Intro</h3>
 										<ul>
 										  <li>A RESTful API uses HTTP requests to help a client (web, mobile app or client.py) to interact with server's database.</li>
-										  <li>HTTP requests (GET, PUT, POST or DELETE) allow for inserting, deleting, updating or retrieving data from server's db.</li>
-										  <li>With RESTful API in Flask, I can define the way of interaction between client and server - all via HTTP requests.</li>
+										  <li>HTTP requests (GET, PUT, POST or DELETE) allow for inserting, deleting, updating or retrieving data.</li>
+										  <li>With RESTful API in Flask, I can define the way of interaction between client and server.</li>
 										  <li>Here is an example of a client sending POST request with data to server through API:</li>
 										</ul>
 										<image src="images/api_schema.JPG" width="780">
@@ -79,7 +79,9 @@
 									<h3>Demo</h3>
 									<ul>
 									  <li>The representation of a relational database to API is <b>Python Data Model</b>.</li>
-									  <li>The representation of Python Data Model to client App is a defined within <b>API Resource</b> of a specific Model.</li>
+										<li>Python Data Model is a class that with its attributes reflects data schema in a relational database</li>
+										<li>In the project, I define two classes: TransactionModel and PayerModel.</li>
+									  <li>The representation of Python Data Model to client App is a defined within <b>API Resource</b> of a Model.</li>
 									  <li>For each specific Data Model we need to define separate API Resource:
 									    <br>
 									      - for TransactionModel there is need to define Transaction API Resource.<br>
