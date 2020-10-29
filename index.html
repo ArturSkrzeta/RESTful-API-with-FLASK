@@ -95,10 +95,13 @@
 									<p>Client - API - Server model:</p>
 									<img src="images/rest.gif" width="780">
 									<ol>
-										<li>client hits the api endpoint</li>
-										<li>client sends post request passing parameters</li>
-										<li>flask server accepts post request</li>
-										<li>request calls post method in api resource</li>
+										<li>client hits the api endpoint like <i>server.com/transaction/transaction_id</i>
+											<br>
+											- <i>transaction_id</i> in api endpoint serves as variable which is passed to api resource
+										</li>
+										<li>client sends post request passing parameters along with <i>transaction_id</i> variable</li>
+										<li>flask server accepts post request with parameters</li>
+										<li>request calls post method in api resource which accepts parameters</li>
 										<li>resource's post method performs validation and creates Model instance</li>
 										<li>resource uses Model's methods to save instance into database</li>
 									</ol>
