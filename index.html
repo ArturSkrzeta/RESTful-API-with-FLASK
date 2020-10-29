@@ -55,6 +55,21 @@
 										  <li>Here is an example of a client sending POST request with data to server through API:</li>
 										</ul>
 										<image src="images/api_schema.JPG" width="780">
+										<ul>
+											<li>The representation of a relational database to API is <b>Python Data Model</b>.</li>
+											<li>Python Data Model is a class that with its attributes reflects data schema in a relational database</li>
+											<li>In the project, I define two classes: TransactionModel and PayerModel.</li>
+											<li>The representation of Python Data Model to client App is a defined within <b>API Resource</b> of a Model.</li>
+											<li>For each specific Data Model we need to define separate API Resource:
+												<br>
+													- for TransactionModel there is need to define Transaction API Resource.<br>
+													- for PayerModel there is need to define Payer API Resource.<br>
+											</li>
+											<li>Resource is an external representation of internal Model.</li>
+											<li>Client App can access Python object of given Model only thorugh API Resource.</li>
+											<li>Client App can interact with Resource using HTTP requests.</li>
+											<li>With that solution, API Resource deciedes what Model objects are accessible and in what way id est getting, posting, putting, deleting.</li>
+										</ul>
 									</header>
 								</div>
 							</section>
@@ -79,21 +94,14 @@
 									<h3>Demo</h3>
 									<p>Client - API - Server model:</p>
 									<img src="images/rest.gif" width="780">
-									<ul>
-									  <li>The representation of a relational database to API is <b>Python Data Model</b>.</li>
-										<li>Python Data Model is a class that with its attributes reflects data schema in a relational database</li>
-										<li>In the project, I define two classes: TransactionModel and PayerModel.</li>
-									  <li>The representation of Python Data Model to client App is a defined within <b>API Resource</b> of a Model.</li>
-									  <li>For each specific Data Model we need to define separate API Resource:
-									    <br>
-									      - for TransactionModel there is need to define Transaction API Resource.<br>
-									      - for PayerModel there is need to define Payer API Resource.<br>
-										</li>
-									  <li>Resource is an external representation of internal Model.</li>
-									  <li>Client App can access Python object of given Model only thorugh API Resource.</li>
-									  <li>Client App can interact with Resource using HTTP requests.</li>
-									  <li>With that solution, API Resource deciedes what Model objects are accessible and in what way id est getting, posting, putting, deleting.</li>
-									</ul>
+									<ol>
+										<li>client hits the api endpoint</li>
+										<li>client sends post request passing parameters</li>
+										<li>flask server accepts post request</li>
+										<li>request calls post method in api resource</li>
+										<li>resource's post method performs validation and creates Model instance</li>
+										<li>resource uses Model's methods to save instance into database</li>
+									</ol>
 									<p>Script test_api.py utilizing pytest library tests HTTP requests on api.py server:</p>
 									<img src="images/test.JPG" width="780">
 									<p>Tests passed successfully.</p>
