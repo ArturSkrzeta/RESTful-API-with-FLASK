@@ -56,20 +56,21 @@
 										</ul>
 										<image src="images/api_schema.JPG" width="780">
 										<ul>
-											<li>The representation of a relational database to API is <b>Python Data Model</b>.</li>
-											<li>Python Data Model is a class that with its attributes reflects data schema in a relational database</li>
+											<li>The representation of a database to API is <b>Python Data Model</b>.</li>
+											<li>Python Data Model is a class that with its attributes reflects data schema.</li>
 											<li>In the project, I define two classes: TransactionModel and PayerModel.</li>
-											<li>The representation of Python Data Model to client App is a defined within <b>API Resource</b> of a Model.</li>
+											<li>The representation of Python Data Model to client App is a defined within <b>API Resource</b>.</li>
 											<li>For each specific Data Model we need to define separate API Resource:
 												<br>
 													- for TransactionModel there is need to define Transaction API Resource.<br>
 													- for PayerModel there is need to define Payer API Resource.<br>
 											</li>
-											<li>Resource is an external representation of internal Model.</li>
+											<li>Resource is an external representation of internal data Model.</li>
 											<li>Client App can access Python object of given Model only thorugh API Resource.</li>
 											<li>Client App can interact with Resource using HTTP requests.</li>
 											<li>With that solution, API Resource deciedes what Model objects are accessible and in what way id est getting, posting, putting, deleting.</li>
 										</ul>
+										<image src="images/restful_api_schema.JPG">
 									</header>
 								</div>
 							</section>
