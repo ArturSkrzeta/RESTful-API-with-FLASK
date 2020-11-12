@@ -98,15 +98,15 @@
 									<p>Client - API - Server model:</p>
 									<img src="images/rest.gif" width="780">
 									<ol>
-										<li>Client hits the api endpoint like <b>server.com/transaction/transaction_id</b>
+										<li>Client hits the api endpoint like <b>server.com/transaction/transaction_id</b>:
 											<br>
-											- <b>transaction/</b> in api endpoint redirects to a specific web server spot,<br>
-											- <b>transaction_id</b> in api endpoint serves as variable which is passed to api resource.
+											- <b>transaction/</b> in API endpoint redirects to a specific web server spot,<br>
+											- <b>transaction_id</b> in API endpoint serves as variable which is passed to api resource.
 										</li>
-										<li>With hitting endpoint client sends POST request passing JSOM parameters along with <i>transaction_id</i> variable.</li>
+										<li>With hitting endpoint client sends POST request passing JSON parameters along with <i>transaction_id</i> variable.</li>
 										<li>Flask server redirects request to API Resource accoring to hit endpoint.</li>
 										<li>Request calls post method in API Resource which parses parameters from JSON into Python variables.</li>
-										<li>Resource's post method creates Model instance passing obtained varialbes as arguments to class constructor.</li>
+										<li>Resource's POST method creates Model instance passing obtained variables as arguments to class constructor.</li>
 										<li>Resource uses Model's methods to save instance into database.</li>
 									</ol>
 									<p>Testing:</p>
