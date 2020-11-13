@@ -12,7 +12,7 @@
 		<!-- Header -->
 			<section id="header">
 				<header>
-					<span class="image avatar"><a href="https://arturskrzeta.github.io/"><img src="images/avatar.png" alt="" style="margin-bottom:0px"/></a></span>
+					<span class="image avatar"><a href="https://arturskrzeta.github.io/"><img src="images/avatar.png" alt="" style="margin-bottom:0px;"/></a></span>
 					<h1 id="logo"><a href="https://arturskrzeta.github.io/">Artur Skrzeta</a></h1>
 					<p>Data Analyst<br />
 					+4 years experience</p>
@@ -46,42 +46,52 @@
 							<section id="one">
 								<div class="container">
 									<header class="major">
-										<h2>Decision Tree as Supervised Learning</h2>
+										<h2>RESTful API and HTTP Automated Tests</h2>
 										<h3>Intro</h3>
 
-										<h5>Datasets:</h5>
+										<h5>App infrastructure:</h5>
 										<ul>
-											<li>Data consists of samples.</li>
-											<li>Each sample is a collection of features.</li>
-											<li>Because of kind of features, the sample can be labeled with defined category:<br>
-												<code>sample_1: ['feature_1', 'feature_2', 'feature_3', 'feature_4']</code><br>
-												<code>sample_2: ['feature_5', 'feature_6', 'feature_7', 'feature_8']</code><br>
-												<code>labels: ['label_1','label_2']</code><br>
-												<code>sample_1 can be labeled with label_1</code><br>
-												<code>sample_2 can be labeled with label_2</code>
-											</li>
-										</ul>
-
-										<h5>Algorithm:</h5>
-										<ul>
-											<li>Decision Tree starts with the root that reporesents all samples already labeled with two different categories.</li>
-										  <li>On each node of decision tree, there is an <b>entropy</b> being calculated.</li>
-											<li>Entropy is the measure of randomness in a group of samples:
+											<li>There are 3 main components of RESTful application:
 												<br>
-												- the lower entropy, the lower uncertainity in a group of samples,<br>
-												- when group of samples is uniform (all samples can be classified by the same label) there is no randomness -> entropy is very low,<br>
-												- when there is 50/50 randomness (50% of samples are labeled as I. and second 50% of samples are labeled as II.) -> entropy equals 1,<br>
-												- the lower entropy in a group of samples, the higher information gain from it.
+												1. Frontend - web-app look.<br>
+												2. Web Service -  between as frontend doesn't communicate with backend directly.<br>
+												3. Backend - web-app database.
 											</li>
-											<li>We want to gain as much information as possible from each node (group of samples) in decision tree.</li>
-											<li>This is possible by keeping nodes with the lowest entropy from the beginning of a tree all the way down to leaves (last nodes where branch ends).</li>
-											<li>We can reach the possible lowest entropy node by node coming up with the best split value (when text feature) or the best split threshold (when numeric feature).</li>
+											<li>Frontend communicates through RESTful API to web service about what infomation it needs to display in the web-app.</li>
+											<li>Web service perfoms queries to database directy.</li>
 										</ul>
 
-										<h5>Model Learning:</h5>
+										<h5>Http requests:</h5>
 										<ul>
-											<li>When new sample comes in, then we start from the root node traversing tree.</li>
-											<li>Samples go through a set of conditions(split values) untill the leaf node where we can assign a label to the sample.</li>
+										  <li>A RESTful API uses Http requests to help a client (front-end, web, mobile app or client.py) to interact with server's database.</li>
+										  <li>Http requests (GET, POST or DELETE) allow for retrieving, inserting or deleting data.</li>
+										  <li>With RESTful API, I can define the way of interaction between client and server.</li>
+										</ul>
+
+										<h5>API architecture:</h5>
+										<img src="images/api_schema.JPG" width="780">
+										<ul>
+											<li>The representation of a database to API is <b>Python Data Model</b>.</li>
+											<li>Python Data Model is a class that with its attributes reflects fields of data schema (fields of data table in relational database analogously).</li>
+											<li>In the project, I define two classes: <span style="color: #71d8a3; font-weight:bold;">TransactionModel</span> and <span style="color: #71d8a3; font-weight:bold;">PayerModel</span>.</li>
+											<li>The representation of Python Data Model to client App is a defined within <b>API Resource</b>.</li>
+											<li>For each specific Data Model we need to define separate API Resource:
+												<br>
+													- for <span style="color: #71d8a3; font-weight:bold;">TransactionModel</span> there is need to define <span style="color: #71c5d8; font-weight:bold;">Transaction API Resource</span>.<br>
+													- for <span style="color: #71d8a3; font-weight:bold;">PayerModel</span> there is need to define <span style="color: #71c5d8; font-weight:bold;">Payer API Resource</span>.<br>
+											</li>
+											<li>Resource is an external representation of internal data Model.</li>
+											<li>Client App can access Python object of given Model only thorugh API Resource.</li>
+											<li>Client App can interact with Resource using HTTP requests.</li>
+										</ul>
+
+										<image src="images/restful_api_schema.JPG" width="580">
+										<h5>Workflow:</h5>
+										<ul>
+											<li>Client app hits an endpoint sending GET request through RESTful API. Web service accepts it, connects database and formulates response and sends it back to a client with JSON.</li>
+											<li>Client app hits an endpoint sending POST request through RESTful API along with information being wrapped with JSON. Web service accepts it,
+												connects database, parses JSON into Python variables which feed a newly-created Python model object (what creates a new record in database) and returns JSON response with a Http status code to a client.</li>
+											<li>With that solution, RESTful API deciedes what Model objects (what data) are accessible at what place (endpoint) and in what way i.e. getting, posting, putting, deleting.</li>
 										</ul>
 
 									</header>
@@ -94,9 +104,10 @@
 									<h3>Features</h3>
 									<p>App includes following features:</p>
 									<ul class="feature-icons">
-										<li class="icon solid fa-check">DecisionTreeClassifier</li>
-										<li class="icon solid fa-check">SkLearn</li>
-										<li class="icon solid fa-check">Pandas</li>
+										<li class="icon solid fa-check">RESTful API</li>
+										<li class="icon solid fa-check">Flask</li>
+										<li class="icon solid fa-check">SQLite database</li>
+										<li class="icon solid fa-check">Pytest</li>
 									</ul>
 								</div>
 							</section>
@@ -105,110 +116,54 @@
 							<section id="three">
 								<div class="container">
 									<h3>Demo</h3>
-									<h5>Dataset:</h5>
-									<ul>
-										<li>Data set is a collections of candidate's skills.</li>
-										<li>There are 4 features in each sample that impact the final decision of candidate hiring (this example is completely random):
+
+									<h5>Client - API - Server model:</h5>
+									<img src="images/rest.gif" width="780">
+									<ol>
+										<li>Client hits the api endpoint like server.com/<span style="color:#1cda7a;">transaction/</span><span style="color:red;">transaction_id</span>:
 											<br>
-											- first feature: <b>education</b>,<br>
-											- second feature: <b>english</b>,<br>
-											- third feature: <b>experience</b>,<br>
-											- forth feautre: <b>interview</b>.
+											- <span style="color:#1cda7a;">transaction/</span> redirects to a specific for transaction web server spot,<br>
+											- <span style="color:red;">transaction_id</span> serves as variable which is passed to api resource.
 										</li>
-										<li>Depending on values of each featre decision tree returns yes or no.</li>
-									</ul>
+										<li>With hitting endpoint client sends POST request passing JSON along with <span style="color:red;">transaction_id</span> variable.</li>
+										<li>Flask server is listening all the time in the backgorund.</li>
+										<li>When request comes in, Flask redirects it to API Resource accoring to the hit <span style="color:#1cda7a;">transaction/</span> endpoint.</li>
+										<li>Request calls post method in API Resource which parses parameters from JSON into Python variables.</li>
+										<li>Resource's POST method creates Model instance passing obtained variables as arguments to class constructor.</li>
+										<li>Resource uses Model's methods to save instance into database.</li>
+									</ol>
 
-									<h5>Features:</h5>
+									<h5>Testing:</h5>
 									<ul>
-										<li>For <b>'education'</b> feature there are values:
-											<br>&nbsp&nbsp&nbsp
-											<code>{'Bachelor': 0, 'Master': 1, 'Student': 2, 'Technician': 3}</code>
-										</li>
-										<li>For <b>'english'</b> feature there are values:
-											<br>&nbsp&nbsp&nbsp
-											<code>{'Advanced': 0, 'Intermediate': 1, 'Native': 2}</code>
-										</li>
-										<li>For <b>'experience'</b> feature there are values:
-											<br>&nbsp&nbsp&nbsp
-											<code>{'1 - 2 years': 0, '1 year': 1, 'No experience': 2, 'above 2 years': 3}</code>
-										</li>
-										<li>For <b>'interview'</b> feature there are values:
-											<br>&nbsp&nbsp&nbsp
-											<code>{'excellent': 0, 'good': 1, 'neutral': 2, 'under expectation': 3}</code>
-										</li>
-										<li>Above curly braces are so-called dictionaries which pairs feature value with a number.</li>
-										<li>The numbers are very important because we need to do the convertions from text values into numeric:
+										<li>There are 2 kinds of testing we can perform on our application:
 											<br>
-											- 'Bachelor' in education colum will be replaced with 0,<br>
-											- 'Advanced' in english colum wil be replaced with 0,<br>
-											- 'above 2 years' in experience column will be replaced with 3 etc.
+											- <b>Unit test</b> - tests single unit of application f.e. we compare if a function returns expexted value or expected data type.<br>
+											- <b>Integration test</b> - tests interaction between modules being combined as a one group.<br>
 										</li>
+										<li>Script <b>test_api.py</b>, utilizing pytest library, tests HTTP requests on <b>api.py</b> server:</li>
 									</ul>
-
-									<h5>Raw Data:</h5>
-									<!-- #500 -->
-									<img src="images/raw.JPG">
-									<ul>
-										<li>Notice, at the end of each row we can see decision already made.</li>
-										<li>This is the historical records of candidates in the past.</li>
-										<li>Historical dataset shows how decisions were made based on different candidates with different set of features.</li>
-										<li>Having view on historical decisions we can learn model how to make future decison for next candidates.</li>
-										<li>Model receiving new candidate's features makes a decision relying on what it learnt from past which is recorded in the data input above.</li>
-									</ul>
-
-									<h5>Converted Data:</h5>
-									<!-- 390 -->
-									<img src="images/converted.JPG">
-									<ul>
-										<li>Text values are replaced with corresponding numeric values due to dicitonaries above.</li>
-										<li>This conversion is necessary for machine learning which accepts only numbers,</li>
-									</ul>
-
-									<h5>Making Decision</h5>
-									<ul>
-										<li>Providing new candidate's future like below:
-											<br>&nbsp&nbsp&nbsp
-											<code>new_data = [</code>
-											<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-											<code>u_education['Student'],</code>
-											<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-												<code>u_english['Intermediate'],</code>
-												<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-												<code>u_experience['1 year'],</code>
-												<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-												<code>u_interview['neutral']</code>
-												<br>&nbsp&nbsp&nbsp
-											<code>]</code>
-										</li>
-										<li>We get the decision from the tree:
-											<br>&nbsp&nbsp&nbsp
-											<code>['No']</code>
-										</li>
-									</ul>
-
-									<h5>Decision Tree graph:</h5>
-									<img src="images/graph.JPG" width="780">
-
+									<img src="images/test.JPG" width="780">
+									<p>Tests passed successfully.</p>
 								</div>
 							</section>
-
 
 						<!-- Four -->
 							<section id="four">
 								<div class="container">
 									<h3>Setup</h3>
-									<p>Script requires libraries installation:</p>
-										<code>pip install pandas</code><br>
-										<code>pip install sklearn</code><br>
-										<code>pip install pydotplus</code><br>
-										<code>pip install ipython</code>
+									<p>Python libraries installation required.</p>
+									<ul>
+										<li>pip install flask</li>
+										<li>pip install requests</li>
+										<li>pip install pytest</li>
+									</ul>
 								</div>
 							</section>
 
 							<section id="five">
 								<div class="container">
 									<h3>Source Code</h3>
-									<p>You can view the source code: <a href="https://github.com/ArturSkrzeta/Decision-Tree-as-Supervised-Learning/tree/master/project">HERE</a></p>
+									<p>You can view the source code: <a href="https://github.com/ArturSkrzeta/RESTful-API-with-FLASK-and-SQLAlchemy/tree/master/project">HERE</a></p>
 									<p>&nbsp</p>
 								</div>
 							</section>
