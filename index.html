@@ -48,13 +48,27 @@
 									<header class="major">
 										<h2>RESTful API and HTTP Automated Tests</h2>
 										<h3>Intro</h3>
+
+										<h5>Infrastrucute:</h5>
 										<ul>
-										  <li>A RESTful API uses HTTP requests to help a client (web, mobile app or client.py) to interact with server's database.</li>
-										  <li>HTTP requests (GET, POST or DELETE) allow for retrieving, inserting or deleting data.</li>
-										  <li>With RESTful API in Flask, I can define the way of interaction between client and server.</li>
-										  <li>Here is an example of a client sending POST request with data to server through API:</li>
+											<li>There are 3 main components of RESTful application:
+												<br>
+												1. Frontend - web-app look.
+												2. Web Service -  between as frontend doesn't communicate with backend directly.
+												3. Backend - web-app database.
+											</li>
+											<li>Frontend communicates through RESTful API to web service about what infomation it needs to display in the web-app.</li>
+											<li>Web service perfoms queries to database directy.</li>
 										</ul>
-										<image src="images/api_schema.JPG" width="780">
+
+										<h5>Http Request:</h5>
+										<ul>
+										  <li>A RESTful API uses Http requests to help a client (front-end, web, mobile app or client.py) to interact with server's database.</li>
+										  <li>Http requests (GET, POST or DELETE) allow for retrieving, inserting or deleting data.</li>
+										  <li>With RESTful API, I can define the way of interaction between client and server.</li>
+										</ul>
+
+										<img src="images/api_schema.JPG" width="780">
 										<ul>
 											<li>The representation of a database to API is <b>Python Data Model</b>.</li>
 											<li>Python Data Model is a class that with its attributes reflects data schema.</li>
@@ -98,13 +112,14 @@
 									<p>Client - API - Server model:</p>
 									<img src="images/rest.gif" width="780">
 									<ol>
-										<li>Client hits the api endpoint like <b>server.com/transaction/transaction_id</b>:
+										<li>Client hits the api endpoint like server.com/<span style="color:#1cda7a;">transaction/</span><span style="color:red;">transaction_id</span>:
 											<br>
-											- <b>transaction/</b> in API endpoint redirects to a specific web server spot,<br>
-											- <b>transaction_id</b> in API endpoint serves as variable which is passed to api resource.
+											- <span style="color:#1cda7a;">transaction/</span> redirects to a specific for transaction web server spot,<br>
+											- <span style="color:red;">transaction_id</span> serves as variable which is passed to api resource.
 										</li>
-										<li>With hitting endpoint client sends POST request passing JSON parameters along with <i>transaction_id</i> variable.</li>
-										<li>Flask server redirects request to API Resource accoring to hit endpoint.</li>
+										<li>With hitting endpoint client sends POST request passing JSON along with <span style="color:red;">transaction_id</span> variable.</li>
+										<li>Flask server is listening all the time in the backgorund.</li>
+										<li>When request comes in, Flask redirects it to API Resource accoring to the hit <span style="color:#1cda7a;">transaction/</span> endpoint.</li>
 										<li>Request calls post method in API Resource which parses parameters from JSON into Python variables.</li>
 										<li>Resource's POST method creates Model instance passing obtained variables as arguments to class constructor.</li>
 										<li>Resource uses Model's methods to save instance into database.</li>
