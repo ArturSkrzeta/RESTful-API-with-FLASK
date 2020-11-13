@@ -72,7 +72,7 @@
 										<img src="images/api_schema.JPG" width="780">
 										<ul>
 											<li>The representation of a database to API is <b>Python Data Model</b>.</li>
-											<li>Python Data Model is a class that with its attributes reflects data schema.</li>
+											<li>Python Data Model is a class that with its attributes reflects fields of data schema (fields of data table in relational database analogously).</li>
 											<li>In the project, I define two classes: <span style="color: #71d8a3; font-weight:bold;">TransactionModel</span> and <span style="color: #71d8a3; font-weight:bold;">PayerModel</span>.</li>
 											<li>The representation of Python Data Model to client App is a defined within <b>API Resource</b>.</li>
 											<li>For each specific Data Model we need to define separate API Resource:
@@ -90,7 +90,7 @@
 										<ul>
 											<li>When client app hits an endpoint sending GET request through RESTful API. Web service accepts it, connects database and formulates response and sends it back to a client with JSON.</li>
 											<li>When client app hits an endpoint sending POST request through RESTful API along with information being wrapped with JSON. Web service accepts it,
-												connects database, parses JSON into Python variables which feed Python model class and returns JSON response with a Http status code to a client.</li>
+												connects database, parses JSON into Python variables which feed a newly-created Python model object (what creates a new record in database) and returns JSON response with a Http status code to a client.</li>
 											<li>With that solution, RESTful API deciedes what Model objects are accessible at what place (endpoint) and in what way i.e. getting, posting, putting, deleting.</li>
 										</ul>
 
